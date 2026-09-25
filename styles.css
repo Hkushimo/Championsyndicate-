@@ -113,8 +113,7 @@ textarea {
 }
 
 .header-cta,
-.button,
-.product-row button {
+.button {
   border: 0;
   border-radius: 0.45rem;
   cursor: pointer;
@@ -292,8 +291,7 @@ h3 {
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
-.button:hover,
-.product-row button:hover {
+.button:hover {
   transform: translateY(-2px);
 }
 
@@ -375,15 +373,13 @@ h3 {
   max-width: 38rem;
 }
 
-.service-grid,
-.product-grid {
+.service-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .service-card,
-.product-card,
 .contact-form {
   border: 1px solid var(--line);
   border-radius: 0.5rem;
@@ -417,8 +413,7 @@ h3 {
   stroke-linejoin: round;
 }
 
-.service-card p,
-.product-info p {
+.service-card p {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -550,85 +545,51 @@ h3 {
   margin-top: 0;
 }
 
-.product-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.product-card {
-  overflow: hidden;
-}
-
-.product-art {
+.merch-callout {
   display: grid;
-  place-items: center;
-  min-height: 17rem;
-  padding: 2rem;
-  background:
-    linear-gradient(135deg, rgba(15, 79, 120, 0.62), rgba(200, 166, 93, 0.3)),
-    #050609;
-}
-
-.product-art img {
-  width: min(13rem, 76%);
-  filter: drop-shadow(0 16px 38px rgba(0, 0, 0, 0.48));
-}
-
-.product-art-alt {
-  background:
-    linear-gradient(135deg, rgba(200, 166, 93, 0.52), rgba(15, 79, 120, 0.32)),
-    #050609;
-}
-
-.product-art-pass span {
-  display: grid;
-  place-items: center;
-  width: 10rem;
-  height: 13rem;
-  border: 1px solid rgba(226, 193, 112, 0.42);
-  border-radius: 0.5rem;
-  background: linear-gradient(180deg, rgba(245, 241, 232, 0.08), rgba(245, 241, 232, 0.02));
-  color: var(--gold-bright);
-  font-family: Antonio, Impact, sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-.product-info {
-  padding: 1.2rem;
-}
-
-.product-tag {
-  margin: 0 0 0.6rem;
-  color: var(--gold-bright);
-  font-size: 0.76rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.product-row {
-  display: flex;
+  grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.2rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background:
+    radial-gradient(circle at 82% 36%, rgba(226, 193, 112, 0.18), transparent 16rem),
+    linear-gradient(135deg, rgba(15, 79, 120, 0.32), rgba(21, 29, 37, 0.92));
+  box-shadow: var(--shadow);
 }
 
-.product-row span {
-  color: var(--text);
-  font-size: 1.45rem;
-  font-weight: 900;
+.merch-copy {
+  padding: clamp(1.3rem, 4vw, 3rem);
 }
 
-.product-row button {
-  min-height: 2.7rem;
-  padding: 0.7rem 0.85rem;
-  color: var(--text);
-  background: var(--blue);
-  transition: transform 160ms ease, background 160ms ease;
+.merch-copy p:not(.eyebrow) {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
 }
 
-.product-row button:hover {
-  background: var(--blue-bright);
+.merch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.6rem;
+}
+
+.merch-mark {
+  display: grid;
+  place-items: center;
+  min-height: 24rem;
+  background:
+    linear-gradient(60deg, transparent 47%, rgba(245, 241, 232, 0.08) 48%, rgba(245, 241, 232, 0.08) 52%, transparent 53%),
+    linear-gradient(-60deg, transparent 47%, rgba(245, 241, 232, 0.06) 48%, rgba(245, 241, 232, 0.06) 52%, transparent 53%);
+  background-size: 4.8rem 4.8rem;
+}
+
+.merch-mark img {
+  width: min(20rem, 72%);
+  filter: drop-shadow(0 24px 55px rgba(0, 0, 0, 0.5));
 }
 
 .contact-section {
@@ -719,13 +680,13 @@ h3 {
   .intro-grid,
   .coverage-grid,
   .contact-grid,
+  .merch-callout,
   .marketplace-heading,
   .footer-grid {
     grid-template-columns: 1fr;
   }
 
-  .service-grid,
-  .product-grid {
+  .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -757,8 +718,7 @@ h3 {
     font-size: clamp(2.8rem, 14vw, 4.6rem);
   }
 
-  .service-grid,
-  .product-grid {
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
@@ -767,16 +727,9 @@ h3 {
   }
 
   .button,
-  .hero-actions {
+  .hero-actions,
+  .merch-actions {
     width: 100%;
   }
 
-  .product-row {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .product-row button {
-    width: 100%;
-  }
 }

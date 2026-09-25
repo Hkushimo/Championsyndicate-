@@ -1,6 +1,5 @@
 const header = document.querySelector("[data-header]");
 const form = document.querySelector("[data-contact-form]");
-const productButtons = document.querySelectorAll("[data-product]");
 
 const setHeaderState = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 18);
@@ -8,25 +7,6 @@ const setHeaderState = () => {
 
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
-
-productButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const product = button.dataset.product;
-    const details = form?.elements.message;
-    const service = form?.elements.service;
-
-    if (service) {
-      service.value = "Merch inquiry";
-    }
-
-    if (details) {
-      const note = `I am interested in the ${product}.`;
-      details.value = details.value ? `${details.value}\n${note}` : note;
-    }
-
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-  });
-});
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
