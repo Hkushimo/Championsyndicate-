@@ -185,17 +185,6 @@ textarea {
   transform-origin: bottom left;
 }
 
-.hero-cage {
-  position: absolute;
-  inset: 0;
-  opacity: 0.2;
-  background-image:
-    linear-gradient(60deg, transparent 47%, rgba(245, 241, 232, 0.28) 48%, rgba(245, 241, 232, 0.28) 52%, transparent 53%),
-    linear-gradient(-60deg, transparent 47%, rgba(245, 241, 232, 0.22) 48%, rgba(245, 241, 232, 0.22) 52%, transparent 53%);
-  background-size: 5.5rem 5.5rem;
-  mask-image: linear-gradient(90deg, transparent 0%, black 52%, black 100%);
-}
-
 .hero-brand-logo {
   position: absolute;
   right: clamp(1rem, 7vw, 7rem);
@@ -348,6 +337,10 @@ h3 {
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   padding: clamp(2.5rem, 7vw, 5.5rem) 0;
+}
+
+.intro-grid > p {
+  margin: 0;
 }
 
 .intro-grid p:last-child,
@@ -585,10 +578,7 @@ h3 {
   display: grid;
   place-items: center;
   min-height: 24rem;
-  background:
-    linear-gradient(60deg, transparent 47%, rgba(245, 241, 232, 0.08) 48%, rgba(245, 241, 232, 0.08) 52%, transparent 53%),
-    linear-gradient(-60deg, transparent 47%, rgba(245, 241, 232, 0.06) 48%, rgba(245, 241, 232, 0.06) 52%, transparent 53%);
-  background-size: 4.8rem 4.8rem;
+  background: radial-gradient(circle at center, rgba(226, 193, 112, 0.12), transparent 16rem);
 }
 
 .merch-mark img {
@@ -697,6 +687,14 @@ h3 {
   .marketplace-heading {
     display: grid;
   }
+
+  .intro-grid {
+    gap: 1rem;
+  }
+
+  .intro-grid > p {
+    margin-top: 0.25rem;
+  }
 }
 
 @media (max-width: 680px) {
@@ -716,6 +714,10 @@ h3 {
   .hero {
     min-height: 88vh;
     padding: 7rem 1rem 2.2rem;
+  }
+
+  .intro-grid {
+    padding-block: 2.5rem;
   }
 
   h1 {
